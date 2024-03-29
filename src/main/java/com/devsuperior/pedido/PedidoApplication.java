@@ -16,8 +16,6 @@ import com.devsuperior.pedido.service.OrderServices;
 public class PedidoApplication implements CommandLineRunner {
 	
 	
-	Scanner sc = new Scanner(System.in);
-	
 	@Autowired
 	private OrderServices orderServices;
 
@@ -28,7 +26,9 @@ public class PedidoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Locale.setDefault(Locale.US);
+
+		Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+		
 
 		int productCode = sc.nextInt();
 		double basicValue = sc.nextDouble();
